@@ -1,78 +1,20 @@
-# AYYAN SNACKS SPOT 🍘
-
 <div align="center">
-
-  <h1>AYYAN SNACKS SPOT</h1>
-
-  <p>
-    Traditional South Indian Snacks • Homemade Taste • Healthy Choices
-  </p>
-
+<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
 </div>
 
----
+# Run and deploy your AI Studio app
 
-## 🌿 About AYYAN SNACKS SPOT
+This contains everything you need to run your app locally.
 
-AYYAN SNACKS SPOT is a traditional South Indian snacks website showcasing
-authentic, delicious, and wholesome food made with traditional flavours.
+View your app in AI Studio: https://ai.studio/apps/e8b3e43c-085e-48f7-9efe-e17682aea5c5
 
-Our menu includes traditional favourites such as:
+## Run Locally
 
-- Millet Puttu
-- White Puttu
-- Samba Rice Puttu
-- Idiyappam with Kadala Curry
-- Chapati with Kadala Curry
-- Kuzhi Paniyaram
-- Sweet Bozhi
-- Healthy Combo
+**Prerequisites:**  Node.js
 
----
 
-## ✨ Website Features
-
-- 🏠 Modern and responsive website
-- 🍘 Traditional South Indian menu
-- 🌿 Premium traditional visual design
-- 📖 About and Founder sections
-- 📩 Customer query/contact form
-- 🔥 Firebase Firestore integration
-- 📧 Automated customer confirmation emails
-- 📱 Mobile, tablet and desktop responsive design
-
----
-
-## 🛠️ Technologies Used
-
-- React
-- Vite
-- JavaScript
-- CSS
-- Firebase Firestore
-- Make
-- Gmail
-
----
-
-## 📩 Customer Queries
-
-Customers can submit their:
-
-- Name
-- Contact Number
-- Email Address
-- Message
-
-Submitted queries are securely stored in Firebase Firestore.
-
-A confirmation email is automatically sent to the customer after submitting a query.
-
----
-
-## 🚀 Getting Started
-
-### Install dependencies
-
-```bash
-npm install
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`

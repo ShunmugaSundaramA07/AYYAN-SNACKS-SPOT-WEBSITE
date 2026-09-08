@@ -1,0 +1,6 @@
+{
+  "name": "AYYAN SNACKS SPOT",
+  "description": "AYYAN SNACKS SPOT Since 2000 - Authentic traditional South Indian delicacies, freshly steamed puttu, idiyappam, chapatis, paniyaram, and sweet bozhi.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

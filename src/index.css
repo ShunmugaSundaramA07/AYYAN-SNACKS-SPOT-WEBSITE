@@ -1,0 +1,199 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #F7EFE5;
+    background-image: url('/warm_cream_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    color: #1A1A1A;
+  }
+}
+
+/* Cinematic Splash Screen Keyframe Animations */
+@keyframes coinRise {
+  0% {
+    transform: translateY(90vh) perspective(1200px) rotateX(55deg) rotateY(-35deg) scale(0.6);
+    filter: blur(1.5px) drop-shadow(0 40px 30px rgba(40, 20, 5, 0.5));
+    opacity: 0.9;
+  }
+  40% {
+    transform: translateY(30vh) perspective(1200px) rotateX(30deg) rotateY(-18deg) scale(0.8);
+    filter: blur(0.8px) drop-shadow(0 30px 25px rgba(40, 20, 5, 0.45));
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(-8px) perspective(1200px) rotateX(4deg) rotateY(-2deg) scale(1.03);
+    filter: blur(0px) drop-shadow(0 22px 35px rgba(40, 20, 5, 0.4));
+  }
+  100% {
+    transform: translateY(0px) perspective(1200px) rotateX(0deg) rotateY(0deg) scale(1);
+    filter: blur(0px) drop-shadow(0 20px 35px rgba(40, 20, 5, 0.35));
+  }
+}
+
+@keyframes coinHover {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(0.5deg);
+  }
+}
+
+@keyframes specularSweep {
+  0% {
+    transform: translateX(-150%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(150%) rotate(45deg);
+  }
+}
+
+@keyframes goldenLightSweep {
+  0% {
+    opacity: 0;
+    transform: translateX(-120%) rotate(35deg);
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 235, 170, 0.2) 20%,
+      rgba(255, 200, 90, 0.85) 50%,
+      rgba(255, 235, 170, 0.2) 80%,
+      transparent 100%
+    );
+  }
+  20% {
+    opacity: 0.9;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(120%) rotate(35deg);
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 235, 170, 0.2) 20%,
+      rgba(255, 200, 90, 0.85) 50%,
+      rgba(255, 235, 170, 0.2) 80%,
+      transparent 100%
+    );
+  }
+}
+
+.animate-coin-rise {
+  animation: coinRise 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-coin-hover {
+  animation: coinHover 3.5s ease-in-out infinite;
+}
+
+.animate-specular-sweep {
+  animation: specularSweep 1.8s ease-in-out infinite;
+}
+
+.animate-golden-light-sweep {
+  animation: goldenLightSweep 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Subtle Traveling Highlight Line Below Navbar */
+@keyframes navbarLineTravel {
+  0% {
+    transform: translateX(-140px);
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.95;
+  }
+  92% {
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+}
+
+.navbar-highlight-glow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 140px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(209, 47, 36, 0.35) 20%,
+    rgba(209, 47, 36, 0.95) 50%,
+    rgba(226, 88, 34, 0.8) 75%,
+    transparent 100%
+  );
+  animation: navbarLineTravel 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+/* Contact Query Form Animated Brand Border & Shimmer */
+@keyframes queryBorderShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.query-form-animated-border {
+  background: linear-gradient(
+    135deg,
+    #D12F24 0%,
+    #E89A3C 18%,
+    #F3CD80 32%,
+    #D12F24 50%,
+    #C5933A 68%,
+    #E25822 82%,
+    #D12F24 100%
+  );
+  background-size: 300% 300%;
+  animation: queryBorderShimmer 14s ease-in-out infinite;
+}
+
+.query-form-glow {
+  background: linear-gradient(
+    135deg,
+    rgba(209, 47, 36, 0.45) 0%,
+    rgba(232, 154, 60, 0.45) 25%,
+    rgba(243, 205, 128, 0.4) 40%,
+    rgba(209, 47, 36, 0.45) 60%,
+    rgba(197, 147, 58, 0.45) 80%,
+    rgba(226, 88, 34, 0.45) 100%
+  );
+  background-size: 300% 300%;
+  animation: queryBorderShimmer 14s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar-highlight-glow {
+    animation: none;
+    display: none;
+  }
+
+  .query-form-animated-border,
+  .query-form-glow {
+    animation: none;
+    background-position: 0% 50%;
+  }
+}

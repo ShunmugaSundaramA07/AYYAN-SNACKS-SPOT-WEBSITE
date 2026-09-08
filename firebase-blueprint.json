@@ -1,0 +1,46 @@
+{
+  "entities": {
+    "customer_queries": {
+      "title": "Customer Queries",
+      "description": "Customer inquiry and feedback submissions from the AYYAN SNACKS SPOT website.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Full name of the customer."
+        },
+        "contactNumber": {
+          "type": "string",
+          "description": "Contact phone number of the customer."
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address of the customer."
+        },
+        "message": {
+          "type": "string",
+          "description": "Inquiry or feedback message."
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "ISO timestamp or server timestamp when the query was submitted."
+        },
+        "status": {
+          "type": "string",
+          "description": "Status of the query (e.g., 'new', 'reviewed')."
+        }
+      },
+      "required": ["name", "contactNumber", "email", "message", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/customer_queries/{queryId}": {
+      "allow": {
+        "create": true,
+        "read": false,
+        "update": false,
+        "delete": false
+      }
+    }
+  }
+}

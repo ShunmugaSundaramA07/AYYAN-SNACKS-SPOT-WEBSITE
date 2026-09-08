@@ -1,0 +1,12 @@
+{
+  "projectId": "ayyan-snacks-spot",
+  "appId": "1:172323932491:web:dbb5c920b7213aea6fc0ce",
+  "apiKey": "AIzaSyDUxlKCzXhBtX8uRPNW1oReEs2D-M-gmZs",
+  "authDomain": "ayyan-snacks-spot.firebaseapp.com",
+  "firestoreDatabaseId": "(default)",
+  "storageBucket": "ayyan-snacks-spot.firebasestorage.app",
+  "messagingSenderId": "172323932491",
+  "measurementId": "",
+  "oAuthClientId": "172323932491-59kvgg2av1l8mr5q6imn4h597urcdvqt.apps.googleusercontent.com",
+  "recaptchaSiteKey": ""
+}
