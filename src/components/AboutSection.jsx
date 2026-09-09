@@ -40,8 +40,8 @@ export default function AboutSection() {
     },
     {
       icon: ShieldCheck,
-      title: '26 Years of Trust',
-      desc: 'Serving customers since 2000 with consistency, dedication and a passion for traditional food.',
+      title: '27 Years of Trust',
+      desc: 'Serving customers since 1999 with consistency, dedication and a passion for traditional food.',
     },
   ];
 
@@ -56,10 +56,10 @@ export default function AboutSection() {
             OUR STORY
           </span>
           <h2 className="text-[32px] font-bold text-[#1A1A1A] tracking-tight mb-4">
-            26 Years of Tradition, Taste &amp; Trust
+            27 Years of Tradition, Taste &amp; Trust
           </h2>
           <p className="text-[16px] text-[#2C241F] font-normal leading-relaxed">
-            Since 2000, AYYAN SNACKS SPOT has been serving traditional South Indian favourites with a passion for authentic taste and wholesome food. What began with a simple love for traditional flavours has grown into a journey built on quality, consistency and the trust of our customers.
+            Since 1999, AYYAN SNACKS SPOT has been serving traditional South Indian favourites with a passion for authentic taste and wholesome food. What began with a simple love for traditional flavours has grown into a journey built on quality, consistency and the trust of our customers.
           </p>
         </div>
 
@@ -99,7 +99,7 @@ export default function AboutSection() {
                             className="w-28 h-28 rounded-full shadow-md mb-4 border-2 border-white"
                           />
                           <span className="text-[14px] font-bold text-[#1A1A1A]">Founder &amp; Driving Force</span>
-                          <span className="text-[12px] text-[#776E65]">AYYAN SNACKS SPOT • Since 2000</span>
+                          <span className="text-[12px] text-[#776E65]">AYYAN SNACKS SPOT • Since 1999</span>
                         </div>
                       )}
                       
@@ -130,7 +130,7 @@ export default function AboutSection() {
                     For 26 years, our founder has been at the heart of AYYAN SNACKS SPOT, carrying forward a passion for traditional South Indian food and authentic flavours. With dedication and consistency, he has helped build the shop around a simple belief — good food should be wholesome, freshly prepared and true to its roots.
                   </p>
 
-                  {/* Highlight Box: 26+ Years of Experience / Since 2000 */}
+                  {/* Highlight Box: 27 Years of Experience / Since 1999 */}
                   <div className="inline-flex items-center gap-6 p-4 sm:p-5 bg-white rounded-[16px] border border-[#E8DFD3] shadow-xs w-fit hover:scale-[1.015] hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-300 ease-out motion-reduce:hover:scale-100">
                     <div className="flex items-center gap-3">
                       <span className="text-[32px] font-bold text-[#D12F24] leading-none">26+</span>
@@ -141,7 +141,7 @@ export default function AboutSection() {
                     </div>
                     <div className="border-l border-stone-200 pl-6 flex items-center gap-2">
                       <Award className="w-5 h-5 text-[#D1A03A]" />
-                      <span className="text-[14px] font-bold text-[#1A1A1A]">Since 2000</span>
+                      <span className="text-[14px] font-bold text-[#1A1A1A]">Since 1999</span>
                     </div>
                   </div>
 
