@@ -62,7 +62,7 @@ export default function Navbar({
     {/* True center message */}
     <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-1 text-stone-300 whitespace-nowrap">
       <MapPin className="w-3.5 h-3.5 text-[#D12F24]" />
-      <span>Ayyan Snacks Spot • Authentic & Wholesome</span>
+      <span>Ayyan Snacks Spot • Tirunelveli</span>
     </div>
 
     {/* Right phone */}
