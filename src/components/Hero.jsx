@@ -1,9 +1,10 @@
 import React from 'react';
-import { Flame, Clock, Star, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Sparkles, Clock, Star, ArrowRight, ShieldCheck } from 'lucide-react';
 import { HEALTHY_COMBO_ITEM } from '../data/foodData.js';
 
-export default function Hero({ onViewMenu, onExploreStory, onOrderNow, onExploreMenu }) {
-  const handleViewMenu = onViewMenu || onOrderNow;
+export default function Hero({ onViewMenu, onExploreStory, onOrderNow, onExploreMenu, onPreBook }) {
+  // Fallback handlers matching your existing logic
+  const handlePreBook = onPreBook || onViewMenu || onOrderNow;
   const handleExploreStory = onExploreStory || onExploreMenu;
 
   return (
@@ -12,34 +13,34 @@ export default function Hero({ onViewMenu, onExploreStory, onOrderNow, onExplore
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          {/* Left Column: Bold Typography & CTAs */}
+          {/* Left Column: Festive Headline & CTAs */}
           <div className="lg:col-span-7 flex flex-col items-start gap-4">
             
-            {/* Small Brand Eyebrow Statement */}
+            {/* Small Festive Eyebrow Statement */}
             <span className="text-[#D12F24] font-semibold text-[14px] uppercase tracking-widest flex items-center gap-2">
-              <Flame className="w-4 h-4 text-[#D12F24]" />
-              The Authentic Taste with Healthy mixed menu you must try
+              <Sparkles className="w-4 h-4 text-[#D12F24]" />
+              Festive Season Special Pre-Bookings Open
             </span>
 
-            {/* Huge Bold Headline from Bold Typography theme */}
+            {/* Main Headline */}
             <h1 className="text-[36px] sm:text-[46px] lg:text-[56px] font-bold leading-[1.1] tracking-tight text-[#1A1A1A]">
-              AYYAN HEALTHY SPOT'S <br />
-              <span className="text-[#D12F24] italic">{HEALTHY_COMBO_ITEM.name}.</span>
+              CELEBRATE DIWALI <br />
+              <span className="text-[#D12F24] italic">WITH US.</span>
             </h1>
 
             {/* Short Description */}
             <p className="text-[16px] text-[#555] max-w-[460px] leading-relaxed">
-              Discover wholesome South Indian favourites thoughtfully combined into delicious, healthy combos. Traditional flavours, fresh preparation, and goodness in every bite
+              Bring home authentic Tirunelveli sweets and crispy savories this festive season. Pre-book your special Diwali combo boxes and sweet hampers early!
             </p>
 
-            {/* CTA Hierarchy */}
+            {/* CTA Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-2 w-full sm:w-auto">
               <button
-                id="btn-hero-view-menu"
-                onClick={handleViewMenu}
-                className="w-full sm:w-auto bg-[#1A1A1A] text-white px-8 h-[52px] rounded-[10px] text-[16px] font-semibold hover:bg-black transition-colors shadow-sm flex items-center justify-center gap-2 cursor-pointer group"
+                id="btn-hero-pre-book"
+                onClick={handlePreBook}
+                className="w-full sm:w-auto bg-[#D12F24] text-white px-8 h-[52px] rounded-[10px] text-[16px] font-semibold hover:bg-[#b8251b] transition-colors shadow-md flex items-center justify-center gap-2 cursor-pointer group"
               >
-                <span>View Menu</span>
+                <span>PRE BOOK YOUR ORDER</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
 
@@ -52,7 +53,7 @@ export default function Hero({ onViewMenu, onExploreStory, onOrderNow, onExplore
               </button>
             </div>
 
-            {/* Trust Badges in Bold Typography theme */}
+            {/* Trust Badges */}
             <div className="pt-5 border-t border-[#E8E0D5] w-full grid grid-cols-3 gap-3 sm:gap-6 mt-2">
               <div className="flex items-center gap-2.5">
                 <div className="w-9 h-9 rounded-[8px] bg-white border border-[#E8E0D5] text-amber-600 flex items-center justify-center shrink-0">
@@ -87,18 +88,18 @@ export default function Hero({ onViewMenu, onExploreStory, onOrderNow, onExplore
 
           </div>
 
-          {/* Right Column: Circular Layered Food Imagery (Design Spec) */}
+          {/* Right Column: Layered Food Imagery */}
           <div className="lg:col-span-5 relative flex items-center justify-center py-4 lg:py-0">
             <div className="relative flex items-center justify-center w-[300px] h-[300px] sm:w-[420px] sm:h-[420px]">
               
-              {/* Outer circular ambient ring from Bold Typography design */}
+              {/* Outer Circular Ambient Ring */}
               <div className="absolute w-[290px] h-[290px] sm:w-[400px] sm:h-[400px] bg-[#EBE4DA] rounded-full" />
 
-              {/* Inner Circular Food Frame with 8px white border */}
+              {/* Inner Circular Food Frame */}
               <button
                 type="button"
-                onClick={handleViewMenu}
-                title="View Healthy Combo in Menu"
+                onClick={handlePreBook}
+                title="Pre-Book Festive Sweets & Snacks"
                 className="relative z-10 w-[240px] h-[240px] sm:w-[340px] sm:h-[340px] bg-[#D1D1D1] rounded-full shadow-2xl flex items-center justify-center overflow-hidden border-8 border-white group cursor-pointer"
               >
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#222] to-transparent opacity-10 z-10 pointer-events-none" />
@@ -114,27 +115,27 @@ export default function Hero({ onViewMenu, onExploreStory, onOrderNow, onExplore
               {/* Floating Badge 1: Top Right */}
               <button
                 type="button"
-                onClick={handleViewMenu}
-                title="View Healthy Combo in Menu"
+                onClick={handlePreBook}
+                title="Pre-Book Festive Sweets"
                 className="absolute top-2 -right-2 sm:right-2 bg-white rounded-[14px] p-2.5 sm:p-3 shadow-lg border border-[#F2EDE9] flex items-center gap-2.5 z-20 hover:scale-[1.02] hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-300 ease-out cursor-pointer text-left motion-reduce:hover:scale-100"
               >
                 <div className="w-8 h-8 rounded-[8px] bg-rose-50 text-[#D12F24] flex items-center justify-center font-bold text-[14px]">
-                  ✨
+                  🪔
                 </div>
                 <div>
-                  <div className="text-[10px] uppercase tracking-wider text-[#888] font-bold">Featured</div>
-                  <div className="text-[13px] font-bold text-[#1A1A1A]">{HEALTHY_COMBO_ITEM.name}</div>
+                  <div className="text-[10px] uppercase tracking-wider text-[#888] font-bold">Diwali Special</div>
+                  <div className="text-[13px] font-bold text-[#1A1A1A]">Pre-Orders Open</div>
                 </div>
               </button>
 
               {/* Floating Badge 2: Bottom Left */}
               <div className="absolute bottom-2 -left-2 sm:left-2 bg-white rounded-[14px] p-2.5 sm:p-3 shadow-lg border border-[#F2EDE9] flex items-center gap-2.5 z-20 hover:scale-[1.02] hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-300 ease-out motion-reduce:hover:scale-100">
-                <div className="w-8 h-8 rounded-[8px] bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-[14px]">
-                  ★
+                <div className="w-8 h-8 rounded-[8px] bg-amber-50 text-amber-600 flex items-center justify-center font-bold text-[14px]">
+                  🎁
                 </div>
                 <div>
-                  <div className="text-[10px] uppercase tracking-wider text-[#888] font-bold">Traditional</div>
-                  <div className="text-[13px] font-bold text-[#1A1A1A]">Fresh & Steamed</div>
+                  <div className="text-[10px] uppercase tracking-wider text-[#888] font-bold">Festive Combo</div>
+                  <div className="text-[13px] font-bold text-[#1A1A1A]">Sweets &amp; Savories</div>
                 </div>
               </div>
 
