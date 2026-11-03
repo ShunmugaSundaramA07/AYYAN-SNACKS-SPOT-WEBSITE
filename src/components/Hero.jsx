@@ -165,7 +165,7 @@ export default function Hero({ onViewMenu, onExploreStory, onOrderNow, onExplore
               </h1>
 
               <p className="text-[15px] sm:text-[16px] text-[#555] max-w-[460px] leading-relaxed">
-                Bring home authentic Tirunelveli sweets and crispy savories this festive season. Pre-book your special Diwali combo boxes and sweet hampers early!
+                Enjoy authentic, freshly prepared traditional sweet pieces this Diwali. Pre-book your favorite sweets today!
               </p>
 
               <div className="flex flex-wrap items-center gap-4 pt-2 w-full sm:w-auto">
