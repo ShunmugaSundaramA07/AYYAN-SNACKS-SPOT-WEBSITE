@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Flame, Clock, Star, ArrowRight, ShieldCheck, ChevronRight, Sparkles } from 'lucide-react';
+import { Flame, Clock, Star, ArrowRight, ShieldCheck, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 import { HEALTHY_COMBO_ITEM } from '../data/foodData.js';
 
 export default function Hero({ onViewMenu, onExploreStory, onOrderNow, onExploreMenu, onPreBook }) {
@@ -9,7 +9,11 @@ export default function Hero({ onViewMenu, onExploreStory, onOrderNow, onExplore
   const handleExploreStory = onExploreStory || onExploreMenu;
   const handlePreBookOrder = onPreBook || onViewMenu || onOrderNow;
 
-  const toggleSlide = () => {
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? 1 : 0));
+  };
+
+  const prevSlide = () => {
     setCurrentSlide((prev) => (prev === 0 ? 1 : 0));
   };
 
@@ -17,20 +21,28 @@ export default function Hero({ onViewMenu, onExploreStory, onOrderNow, onExplore
     <section id="hero-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-10 relative">
       <div className="bg-[#FAF7F2]/85 backdrop-blur-sm rounded-[24px] border border-[#E8E0D5] overflow-hidden p-5 sm:p-10 lg:p-14 shadow-sm relative">
         
-        {/* Right-Side Center Carousel Arrow Button - Positioned safely for mobile & desktop */}
+        {/* Left-Side Center Toggle Arrow Button */}
         <button
-          onClick={toggleSlide}
-          className="absolute right-2 sm:right-4 top-[45%] -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 border border-[#E8E0D5] shadow-lg flex items-center justify-center text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-all duration-300 cursor-pointer group"
-          title={currentSlide === 0 ? "Switch to Diwali Pre-Booking" : "Switch to Regular Menu"}
+          onClick={prevSlide}
+          className="absolute left-2 sm:left-4 top-[45%] -translate-y-1/2 z-30 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/90 border border-[#E8E0D5] shadow-md flex items-center justify-center text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-all duration-300 cursor-pointer group"
+          title="Previous Slide"
         >
-          <ChevronRight className="w-6 h-6 group-hover:scale-110 transition-transform" />
+          <ChevronLeft className="w-5 h-5 group-hover:scale-110 transition-transform" />
+        </button>
+
+        {/* Right-Side Center Toggle Arrow Button (Reduced Size) */}
+        <button
+          onClick={nextSlide}
+          className="absolute right-2 sm:right-4 top-[45%] -translate-y-1/2 z-30 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/90 border border-[#E8E0D5] shadow-md flex items-center justify-center text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-all duration-300 cursor-pointer group"
+          title="Next Slide"
+        >
+          <ChevronRight className="w-5 h-5 group-hover:scale-110 transition-transform" />
         </button>
 
         {/* SLIDE 0: Regular Hero Content */}
         {currentSlide === 0 && (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center transition-opacity duration-300">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center transition-opacity duration-300 px-2 sm:px-0">
             
-            {/* Left Column: Bold Typography & CTAs */}
             <div className="lg:col-span-7 flex flex-col items-start gap-4 pr-6 sm:pr-0">
               <span className="text-[#D12F24] font-semibold text-[13px] sm:text-[14px] uppercase tracking-widest flex items-center gap-2">
                 <Flame className="w-4 h-4 text-[#D12F24] shrink-0" />
@@ -65,7 +77,7 @@ export default function Hero({ onViewMenu, onExploreStory, onOrderNow, onExplore
                 </button>
               </div>
 
-              {/* Trust Badges - Fixed mobile alignment with grid-cols-1 sm:grid-cols-3 */}
+              {/* Trust Badges */}
               <div className="pt-5 border-t border-[#E8E0D5] w-full grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 mt-2">
                 <div className="flex items-center gap-2.5">
                   <div className="w-9 h-9 rounded-[8px] bg-white border border-[#E8E0D5] text-amber-600 flex items-center justify-center shrink-0">
@@ -99,7 +111,6 @@ export default function Hero({ onViewMenu, onExploreStory, onOrderNow, onExplore
               </div>
             </div>
 
-            {/* Right Column: Circular Layered Food Imagery */}
             <div className="lg:col-span-5 relative flex items-center justify-center py-4 lg:py-0">
               <div className="relative flex items-center justify-center w-[280px] h-[280px] sm:w-[420px] sm:h-[420px]">
                 <div className="absolute w-[270px] h-[270px] sm:w-[400px] sm:h-[400px] bg-[#EBE4DA] rounded-full" />
@@ -120,7 +131,6 @@ export default function Hero({ onViewMenu, onExploreStory, onOrderNow, onExplore
                   />
                 </button>
 
-                {/* Floating Badges */}
                 <button
                   type="button"
                   onClick={handleViewMenu}
@@ -151,12 +161,12 @@ export default function Hero({ onViewMenu, onExploreStory, onOrderNow, onExplore
 
         {/* SLIDE 1: Diwali Pre-Booking Hero Content */}
         {currentSlide === 1 && (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center transition-opacity duration-300">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center transition-opacity duration-300 px-2 sm:px-0">
             
             <div className="lg:col-span-7 flex flex-col items-start gap-4 pr-6 sm:pr-0">
               <span className="text-[#D12F24] font-semibold text-[13px] sm:text-[14px] uppercase tracking-widest flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-[#D12F24] shrink-0" />
-                <span>Festive Season Special Pre-Bookings Open</span>
+                <span>Diwali Festival Special Pre-Orders Open</span>
               </span>
 
               <h1 className="text-[32px] sm:text-[46px] lg:text-[56px] font-bold leading-[1.1] tracking-tight text-[#1A1A1A]">
@@ -187,7 +197,7 @@ export default function Hero({ onViewMenu, onExploreStory, onOrderNow, onExplore
                 </button>
               </div>
 
-              {/* Trust Badges - Fixed mobile alignment with grid-cols-1 sm:grid-cols-3 */}
+              {/* Trust Badges */}
               <div className="pt-5 border-t border-[#E8E0D5] w-full grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 mt-2">
                 <div className="flex items-center gap-2.5">
                   <div className="w-9 h-9 rounded-[8px] bg-white border border-[#E8E0D5] text-amber-600 flex items-center justify-center shrink-0">
@@ -221,7 +231,6 @@ export default function Hero({ onViewMenu, onExploreStory, onOrderNow, onExplore
               </div>
             </div>
 
-            {/* Right Column: Festive Imagery */}
             <div className="lg:col-span-5 relative flex items-center justify-center py-4 lg:py-0">
               <div className="relative flex items-center justify-center w-[280px] h-[280px] sm:w-[420px] sm:h-[420px]">
                 <div className="absolute w-[270px] h-[270px] sm:w-[400px] sm:h-[400px] bg-[#EBE4DA] rounded-full" />
@@ -229,13 +238,13 @@ export default function Hero({ onViewMenu, onExploreStory, onOrderNow, onExplore
                 <button
                   type="button"
                   onClick={handlePreBookOrder}
-                  title="Pre-Book Festive Sweets & Snacks"
+                  title="Pre-Book Sweet Pieces"
                   className="relative z-10 w-[220px] h-[220px] sm:w-[340px] sm:h-[340px] bg-[#D1D1D1] rounded-full shadow-2xl flex items-center justify-center overflow-hidden border-8 border-white group cursor-pointer"
                 >
                   <div className="absolute inset-0 bg-gradient-to-tr from-[#222] to-transparent opacity-10 z-10 pointer-events-none" />
                   <img
                     src={HEALTHY_COMBO_ITEM.image}
-                    alt="Diwali Special"
+                    alt="Diwali Special Sweets"
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="eager"
@@ -248,25 +257,10 @@ export default function Hero({ onViewMenu, onExploreStory, onOrderNow, onExplore
                   </div>
                   <div>
                     <div className="text-[10px] uppercase tracking-wider text-[#888] font-bold">Diwali Special</div>
-                    <div className="text-[13px] font-bold text-[#1A1A1A]">Pre-Orders Open</div>
+                    <div className="text-[13px] font-bold text-[#1A1A1A]">Sweet Pieces Open</div>
                   </div>
                 </div>
 
                 <div className="absolute bottom-2 left-0 sm:left-2 bg-white rounded-[14px] p-2.5 sm:p-3 shadow-lg border border-[#F2EDE9] flex items-center gap-2.5 z-20">
-                  <div className="w-8 h-8 rounded-[8px] bg-amber-50 text-amber-600 flex items-center justify-center font-bold text-[14px]">
-                    🎁
-                  </div>
-                  <div>
-                    <div className="text-[10px] uppercase tracking-wider text-[#888] font-bold">Festive Combo</div>
-                    <div className="text-[13px] font-bold text-[#1A1A1A]">Sweets &amp; Savories</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
-      </div>
-    </section>
-  );
-}
+                  <div className="w-8 h
+                  
