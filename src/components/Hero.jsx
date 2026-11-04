@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import { Flame, Clock, Star, ArrowRight, ShieldCheck, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 import { HEALTHY_COMBO_ITEM } from '../data/foodData.js';
 
-export default function Hero({ onViewMenu, onExploreStory, onOrderNow, onExploreMenu, onPreBook }) {
+export default function Hero({ onViewMenu, onExploreStory, onOrderNow, onExploreMenu, onPreBook, diwaliImage }) {
   const [currentSlide, setCurrentSlide] = useState(0); // 0 = Regular Hero, 1 = Diwali Hero
 
   const handleViewMenu = onViewMenu || onOrderNow;
   const handleExploreStory = onExploreStory || onExploreMenu;
   const handlePreBookOrder = onPreBook || onViewMenu || onOrderNow;
+
+  // Set default path to public/diwali-banner.png if diwaliImage prop is not provided
+  const festiveBannerSrc = diwaliImage || "/diwali-banner.png";
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev === 0 ? 1 : 0));
@@ -30,7 +33,7 @@ export default function Hero({ onViewMenu, onExploreStory, onOrderNow, onExplore
           <ChevronLeft className="w-5 h-5 group-hover:scale-110 transition-transform" />
         </button>
 
-        {/* Right-Side Center Toggle Arrow Button (Reduced Size) */}
+        {/* Right-Side Center Toggle Arrow Button */}
         <button
           onClick={nextSlide}
           className="absolute right-2 sm:right-4 top-[45%] -translate-y-1/2 z-30 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/90 border border-[#E8E0D5] shadow-md flex items-center justify-center text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-all duration-300 cursor-pointer group"
@@ -159,7 +162,7 @@ export default function Hero({ onViewMenu, onExploreStory, onOrderNow, onExplore
           </div>
         )}
 
-        {/* SLIDE 1: Diwali Pre-Booking Hero Content */}
+        {/* SLIDE 1: Diwali Pre-Booking Hero Content with Custom Image */}
         {currentSlide === 1 && (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center transition-opacity duration-300 px-2 sm:px-0">
             
@@ -231,6 +234,7 @@ export default function Hero({ onViewMenu, onExploreStory, onOrderNow, onExplore
               </div>
             </div>
 
+            {/* Right Column: Custom Diwali Graphic */}
             <div className="lg:col-span-5 relative flex items-center justify-center py-4 lg:py-0">
               <div className="relative flex items-center justify-center w-[280px] h-[280px] sm:w-[420px] sm:h-[420px]">
                 <div className="absolute w-[270px] h-[270px] sm:w-[400px] sm:h-[400px] bg-[#EBE4DA] rounded-full" />
@@ -239,13 +243,11 @@ export default function Hero({ onViewMenu, onExploreStory, onOrderNow, onExplore
                   type="button"
                   onClick={handlePreBookOrder}
                   title="Pre-Book Sweet Pieces"
-                  className="relative z-10 w-[220px] h-[220px] sm:w-[340px] sm:h-[340px] bg-[#D1D1D1] rounded-full shadow-2xl flex items-center justify-center overflow-hidden border-8 border-white group cursor-pointer"
+                  className="relative z-10 w-[240px] h-[240px] sm:w-[360px] sm:h-[360px] bg-transparent rounded-full shadow-2xl flex items-center justify-center overflow-hidden border-4 border-amber-400 group cursor-pointer"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-tr from-[#222] to-transparent opacity-10 z-10 pointer-events-none" />
                   <img
-                    src={HEALTHY_COMBO_ITEM.image}
-                    alt="Diwali Special Sweets"
-                    referrerPolicy="no-referrer"
+                    src={festiveBannerSrc}
+                    alt="Happy Diwali - Ayyan Snacks Spot"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="eager"
                   />
@@ -262,5 +264,20 @@ export default function Hero({ onViewMenu, onExploreStory, onOrderNow, onExplore
                 </div>
 
                 <div className="absolute bottom-2 left-0 sm:left-2 bg-white rounded-[14px] p-2.5 sm:p-3 shadow-lg border border-[#F2EDE9] flex items-center gap-2.5 z-20">
-                  <div className="w-8 h
-                  
+                  <div className="w-8 h-8 rounded-[8px] bg-amber-50 text-amber-600 flex items-center justify-center font-bold text-[14px]">
+                    🍬
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wider text-[#888] font-bold">Traditional</div>
+                    <div className="text-[13px] font-bold text-[#1A1A1A]">Freshly Prepared</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+      </div>
+    </section>
+  );
+}
