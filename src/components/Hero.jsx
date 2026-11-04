@@ -246,11 +246,11 @@ export default function Hero({ onViewMenu, onExploreStory, onOrderNow, onExplore
                   className="relative z-10 w-[240px] h-[240px] sm:w-[360px] sm:h-[360px] bg-transparent rounded-full shadow-2xl flex items-center justify-center overflow-hidden border-4 border-amber-400 group cursor-pointer"
                 >
                   <img
-                    src={festiveBannerSrc}
-                    alt="Happy Diwali - Ayyan Snacks Spot"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="eager"
-                  />
+  src="/diwali-banner.png.png"
+  alt="Happy Diwali - Ayyan Snacks Spot"
+  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+  loading="eager"
+/>
                 </button>
 
                 <div className="absolute top-2 right-0 sm:right-2 bg-white rounded-[14px] p-2.5 sm:p-3 shadow-lg border border-[#F2EDE9] flex items-center gap-2.5 z-20">
